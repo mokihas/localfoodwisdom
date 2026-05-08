@@ -352,7 +352,7 @@ contactForm.addEventListener('submit', (e) => {
     contactForm.reset();
 
     formNote.textContent =
-      'Message sent successfully! We'll respond within 24 hours.';
+      'Message sent successfully! We\'ll respond within 24 hours.';
 
     formNote.style.color =
       '#27ae60';
