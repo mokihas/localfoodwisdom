@@ -7,13 +7,13 @@ const workshops = [
 
     // Thumbnail image
     image:
-      "/Assam Science Society Folder/5c0e8944-7211-4d2c-b074-602b53b420d8.jpg",
+      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400",
 
     // Multiple popup images
     fullImages: [
-      "/Assam Science Society Folder/e6ec5874-3df5-4f21-90be-43f2abc77afd.jpg",
+      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
 
-      "/Assam Science Society Folder/5c0e8944-7211-4d2c-b074-602b53b420d8.jpg"
+      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
     ]
   },
 
