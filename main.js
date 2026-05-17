@@ -485,3 +485,26 @@ document.addEventListener('DOMContentLoaded', () => {
   updateSlider();
   startAutoplay();
 });
+
+// Mobile Hamburger Menu Logic
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (hamburger && navMenu) {
+    // Toggle menu open/close on click
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when any nav link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+});
