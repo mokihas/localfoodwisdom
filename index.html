@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Updated Gallery 2026-05-12 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -17,7 +18,7 @@
 <nav class="navbar" id="navbar">
   <div class="nav-container">
     <a href="#home" class="logo">
-      <i class="fas fa-leaf"></i>
+      <img src="./logo.jpg" alt="Local Food Wisdom Logo" class="logo-img">
       <span>Local Food Wisdom</span>
     </a>
     <button class="hamburger" id="hamburger">
@@ -53,7 +54,7 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-image">
-        <img src="/WhatsApp_Image_2026-04-27_at_16.21.28.jpeg" alt="Ritumonii Saha - Dietitian">
+        <img src="./WhatsApp_Image_2026-04-27_at_16.21.28.jpeg" alt="Ritumonii Saha - Dietitian">
       </div>
       <div class="about-text">
         <h3 class="greeting">Nomoskar / Namaskaram</h3>
@@ -275,43 +276,96 @@
 <section class="testimonials" id="testimonials">
   <div class="container">
     <h2 class="section-title">What Our Clients Say</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>"After years of PCOS struggles, the Flourish Feminine program regulated my cycles naturally within 2 months. The local food focus made it so easy to follow!"</p>
-        <div class="client">
-          <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Priya">
-          <div>
-            <strong>Priya S.</strong>
-            <span>Flourish Feminine</span>
+    <div class="testimonials-slider-container">
+      <button class="slider-arrow prev" id="testimonialsPrev" aria-label="Previous Review">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="testimonials-slider">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <!-- Review 1: Nikita Das -->
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"I am so grateful and thankful to Ritumoni Ba for her help and guidance with managing my irregular periods. Her dietary advice really made a difference. I got my regular periods... Since then I stopped taking medicines and started following her diet chart and after following almost 2 weeks of her diet plan I got my regular periods. Apart from that I also see differences in my body and I feel better now."</p>
+            <div class="client">
+              <div class="client-avatar" style="background-color: #4CAF50; color: white; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">ND</div>
+              <div>
+                <strong>Nikita Das</strong>
+                <span>Verified Google Review (Irregular Periods)</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>"My fatty liver improved from Grade 2 to Grade 1 in 3 months. The diet was completely local and accessible. I never felt deprived!"</p>
-        <div class="client">
-          <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Rahul">
-          <div>
-            <strong>Rahul M.</strong>
-            <span>Fatty Liver Reversal</span>
+          <!-- Review 2: Jayanta Roy -->
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"Ritumoni Ma’am’s 2-month diet program has made a huge difference in my life! 😍 I lost nearly 8 kg, and my bloating issues are completely gone. She helped me understand the fundamentals of nutrition, introduced me to powerful superfoods, and showed me how small, consistent changes can create a big impact."</p>
+            <div class="client">
+              <div class="client-avatar" style="background-color: #2E7D32; color: white; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">JR</div>
+              <div>
+                <strong>Jayanta Roy</strong>
+                <span>Verified Google Review (Weight Loss & Bloating)</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>"My 5-year IBS and bloating issues are completely gone after the Gut Reversal Program. Patient, detailed guidance with delicious local recipes!"</p>
-        <div class="client">
-          <img src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Ananya">
-          <div>
-            <strong>Ananya R.</strong>
-            <span>Gut Reversal</span>
+          <!-- Review 3: Debakshi Dutta -->
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"I am thankful to Ritumoni for guiding me throughout the past 2 months. I am going through an extremely challenging situation right now but with her easy diet plans, stress management programs I am able to cope well... Her unique approach to holistic health care has helped me a lot. She has really transformed me not only with diet plans but also my way of looking at life has changed."</p>
+            <div class="client">
+              <div class="client-avatar" style="background-color: #F4A261; color: white; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">DD</div>
+              <div>
+                <strong>Debakshi Dutta</strong>
+                <span>Verified Google Review (Holistic Wellbeing)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4: Panchali Borthakur -->
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"My 90 days IBS diet journey with Dietician Ritumoni was great. As a mother of two it wasn't easy for me to follow the pattern & it was her who constantly pushed & motivated me to successfully achieve my lost self care goals. My IBS symptoms not only subsided but also I have achieved weight loss, gained energy & received many compliments!"</p>
+            <div class="client">
+              <div class="client-avatar" style="background-color: #E9C46A; color: white; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">PB</div>
+              <div>
+                <strong>Panchali Borthakur</strong>
+                <span>Verified Google Review (IBS Gut Health)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5: Sarmistha Acharjee -->
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"Ritumoni has been an incredible source of support over the past month, providing me with the tools I need to tackle a difficult situation. Her easy-to-follow diet plans and stress management programs have made a significant difference in my ability to cope. I have great admiration for her knowledge and expertise."</p>
+            <div class="client">
+              <div class="client-avatar" style="background-color: #81C784; color: white; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">SA</div>
+              <div>
+                <strong>Sarmistha Acharjee</strong>
+                <span>Verified Google Review (Stress & Coping Diet)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 6: Anandsmita Dey -->
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"I had joined the 6 weeks 'Flourish Feminine💕' program. I'm so glad and grateful that I came across her. In a very short period of time with her guidance and support I got back to live a healthier life. With the help of her tips and motivation a lot of changes I could see in myself. Mostly the direction of meditation helped me a lot other than the diet."</p>
+            <div class="client">
+              <div class="client-avatar" style="background-color: #F06292; color: white; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">AD</div>
+              <div>
+                <strong>Anandsmita Dey</strong>
+                <span>Verified Google Review (Flourish Feminine)</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <button class="slider-arrow next" id="testimonialsNext" aria-label="Next Review">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
+    <div class="testimonials-dots" id="testimonialsDots"></div>
   </div>
 </section>
 
@@ -320,29 +374,55 @@
   <div class="container">
     <h2 class="section-title">Workshops & Events</h2>
     <div class="gallery-grid">
-      <div class="gallery-item" data-src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Workshop">
+      <div class="gallery-item" data-src="./Anganwadis/thumbnail.png">
+        <img src="./Anganwadis/thumbnail.png" alt="Anganwadis">
         <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">Anganwadis</div>
       </div>
-      <div class="gallery-item" data-src="https://images.pexels.com/photos/3807571/pexels-photo-3807571.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <img src="https://images.pexels.com/photos/3807571/pexels-photo-3807571.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Event">
+      <div class="gallery-item" data-src="./Assam%20Science%20Society%20Folder/thumbnail.jpg">
+        <img src="./Assam%20Science%20Society%20Folder/thumbnail.jpg" alt="Assam Science Society">
         <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">Assam Science Society</div>
       </div>
-      <div class="gallery-item" data-src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <img src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Session">
+      <div class="gallery-item" data-src="./Medical%20Awareness%20Session/thumbnail.jpg">
+        <img src="./Medical%20Awareness%20Session/thumbnail.jpg" alt="Medical Awareness Session">
         <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">Medical Awareness Session</div>
       </div>
-      <div class="gallery-item" data-src="https://images.pexels.com/photos/3807570/pexels-photo-3807570.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <img src="https://images.pexels.com/photos/3807570/pexels-photo-3807570.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Workshop">
+      <div class="gallery-item" data-src="./Millet%20SSB%20Camp/thumbnail.jpg">
+        <img src="./Millet%20SSB%20Camp/thumbnail.jpg" alt="Millet SSB Camp">
         <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">Millet SSB Camp</div>
       </div>
-      <div class="gallery-item" data-src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Event">
+      <div class="gallery-item" data-src="./National%20Nutrition%20Week%20Celebration/thumbnail.jpg">
+        <img src="./National%20Nutrition%20Week%20Celebration/thumbnail.jpg" alt="National Nutrition Week Celebration">
         <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">National Nutrition Week</div>
       </div>
-      <div class="gallery-item" data-src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <img src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Session">
+      <div class="gallery-item" data-src="./Smile%20Foundation/thumbnail.jpg">
+        <img src="./Smile%20Foundation/thumbnail.jpg" alt="Smile Foundation">
         <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">Smile Foundation</div>
+      </div>
+      <div class="gallery-item" data-src="./Spell%20Champs/thumbnail.jpg">
+        <img src="./Spell%20Champs/thumbnail.jpg" alt="Spell Champs">
+        <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">Spell Champs</div>
+      </div>
+      <div class="gallery-item" data-src="./SSB%20Kajalgaon/thumbnail.jpg">
+        <img src="./SSB%20Kajalgaon/thumbnail.jpg" alt="SSB Kajalgaon">
+        <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">SSB Kajalgaon</div>
+      </div>
+      <div class="gallery-item" data-src="./Swagat%20Hospital%20&%20Research%20Centre/thumbnail.jpg">
+        <img src="./Swagat%20Hospital%20%26%20Research%20Centre/thumbnail.jpg" alt="Swagat Hospital & Research Centre">
+        <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">Swagat Hospital & Research Centre</div>
+      </div>
+      <div class="gallery-item" data-src="./Womens%20Health%20Programme/thumbnail.jpg">
+        <img src="./Womens%20Health%20Programme/thumbnail.jpg" alt="Womens Health Programme">
+        <div class="overlay"><i class="fas fa-expand"></i></div>
+        <div class="folder-caption">Womens Health Programme</div>
       </div>
     </div>
   </div>
@@ -351,8 +431,26 @@
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <span class="close">&times;</span>
-  <img class="lightbox-content" src="">
+  <button class="lightbox-btn prev" id="lightboxPrev" aria-label="Previous image">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <div class="lightbox-wrapper">
+    <img class="lightbox-content" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+  <button class="lightbox-btn next" id="lightboxNext" aria-label="Next image">
+    <i class="fas fa-chevron-right"></i>
+  </button>
 </div>
+<!-- MAP SECTION -->
+<section class="map-section">
+  <div class="container">
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.1129994530756!2d90.5532358!3d26.4843063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3758ffa2ae8b9cc9%3A0x8925ecfc02e7cc58!2sLocal%20food%20wisdom~The%20Diet%20Clinic%20by%20Dietician%20Ritumoni%20Saha!5e0!3m2!1sen!2sin!4v1779005574784!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -369,11 +467,14 @@
       </form>
       <div class="contact-info">
         <h3>Contact Details</h3>
-        <p><strong>📍 Address:</strong> 123, Wellness Street, Koramangala, Bengaluru – 560034</p>
-        <p><strong>📱 WhatsApp:</strong> <a href="https://wa.me/919876543210" target="_blank">+91 98765 43210</a></p>
+        <p><strong>📍 Address:</strong> Baroda Complex, opposite Pacific Honda Showroom, North Bongaigaon, Amguri, Bongaigaon, Assam 783380</p>
+        <p><strong>📱 Phone / WhatsApp:</strong> <a href="https://wa.me/917836904137" target="_blank">+91 78369 04137</a></p>
         <p><strong>📧 Email:</strong> hello@localfoodwisdom.com</p>
-        <p><strong>🕒 Hours:</strong> Mon–Sat: 9 AM–6 PM | Sun: By Appointment</p>
-        <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20your%20nutrition%20services" class="btn btn-outline" style="margin-top: 20px;">
+        <p><strong>🕒 Hours:</strong><br>
+          Mon–Sat: 11 AM–2 PM, 5 PM–8 PM<br>
+          Sun: 5 PM–8 PM
+        </p>
+        <a href="https://wa.me/917836904137?text=I'm%20interested%20in%20your%20nutrition%20services" class="btn btn-outline" style="margin-top: 20px;">
           <i class="fab fa-whatsapp"></i> Chat on WhatsApp
         </a>
       </div>
@@ -390,7 +491,7 @@
 </footer>
 
 <!-- WHATSAPP FAB -->
-<a href="https://wa.me/919876543210" class="whatsapp-fab" target="_blank" title="Chat on WhatsApp">
+<a href="https://wa.me/917836904137" class="whatsapp-fab" target="_blank" title="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
 

@@ -1,276 +1,237 @@
 // WORKSHOP DATA - EASILY UPDATEABLE
-// Simply add your workshop images and names here
+// Map directly to actual converted files in the public subfolders
 
 const workshops = [
   {
-    name: "Assam Science Society",
-
-    // Thumbnail image
-    image:
-      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    // Multiple popup images
+    name: "National Nutrition Month at Anganwadis",
+    image: "./Anganwadis/thumbnail.png",
     fullImages: [
-      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
-
-      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "./Anganwadis/thumbnail.png"
     ]
   },
-
   {
-    name: "Awareness of Millet on Health at SSB Camp",
-
-    image:
-      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    fullImage:
-      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
+    name: "Assam Science Society",
+    image: "./Assam Science Society Folder/thumbnail.jpg",
+    fullImages: [
+      "./Assam Science Society Folder/thumbnail.jpg",
+      "./Assam Science Society Folder/e6ec5874-3df5-4f21-90be-43f2abc77afd.jpg"
+    ]
   },
-
   {
     name: "Medical Awareness Session",
-
-    image:
-      "https://images.pexels.com/photos/3807571/pexels-photo-3807571.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    fullImage:
-      "https://images.pexels.com/photos/3807571/pexels-photo-3807571.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "./Medical Awareness Session/thumbnail.jpg",
+    fullImages: [
+      "./Medical Awareness Session/thumbnail.jpg"
+    ]
   },
-
   {
-    name: "National Nutrition Month at Anganwadis",
-
-    image:
-      "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    fullImage:
-      "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=800"
+    name: "Awareness of Millet on Health at SSB Camp",
+    image: "./Millet SSB Camp/thumbnail.jpg",
+    fullImages: [
+      "./Millet SSB Camp/thumbnail.jpg",
+      "./Millet SSB Camp/13134144-b0e5-454b-a69c-5fcf3fe27ff3.jpg",
+      "./Millet SSB Camp/146c8af3-0174-4766-88da-3c89af4c5da5.jpg",
+      "./Millet SSB Camp/240f8fe0-6f97-4152-acb1-c71db1dd3388.jpg"
+    ]
   },
-
   {
     name: "National Nutrition Week Celebration",
-
-    image:
-      "https://images.pexels.com/photos/3807570/pexels-photo-3807570.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    fullImage:
-      "https://images.pexels.com/photos/3807570/pexels-photo-3807570.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "./National Nutrition Week Celebration/thumbnail.jpg",
+    fullImages: [
+      "./National Nutrition Week Celebration/thumbnail.jpg",
+      "./National Nutrition Week Celebration/7094c517-ff8a-4112-a6d8-f034d852ff3d.jpg",
+      "./National Nutrition Week Celebration/IMG_3876.jpg"
+    ]
   },
-
   {
     name: "Nutrition Demonstration Workshops by Smile Foundation",
-
-    image:
-      "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    fullImage:
-      "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "./Smile Foundation/thumbnail.jpg",
+    fullImages: [
+      "./Smile Foundation/thumbnail.jpg",
+      "./Smile Foundation/2f37208c-83c6-4261-9deb-36e44d8e56a5.jpg",
+      "./Smile Foundation/IMG_7864.jpg"
+    ]
   },
-
   {
     name: "Spell Champs (Spelling Contest and Diet Session for Kids)",
-
-    image:
-      "https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    fullImage:
-      "https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "./Spell Champs/thumbnail.jpg",
+    fullImages: [
+      "./Spell Champs/thumbnail.jpg",
+      "./Spell Champs/IMG_3758.PNG",
+      "./Spell Champs/IMG_7658.jpg"
+    ]
   },
-
   {
     name: "SSB Kajalgaon",
-
-    image:
-      "https://images.pexels.com/photos/3807572/pexels-photo-3807572.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    fullImage:
-      "https://images.pexels.com/photos/3807572/pexels-photo-3807572.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "./SSB Kajalgaon/thumbnail.jpg",
+    fullImages: [
+      "./SSB Kajalgaon/thumbnail.jpg",
+      "./SSB Kajalgaon/ca596702-70df-4b81-b5a2-9fe7839ab598.jpg",
+      "./SSB Kajalgaon/ff65dd81-cd08-488b-9d3d-fa32f23e48b2.jpg"
+    ]
   },
-
   {
     name: "Swagat Hospital & Research Centre",
-
-    image:
-      "https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    fullImage:
-      "https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "./Swagat Hospital & Research Centre/thumbnail.jpg",
+    fullImages: [
+      "./Swagat Hospital & Research Centre/thumbnail.jpg"
+    ]
   },
-
   {
-    name:
-      "Women's Health Programmes at Different Educational & Work Places",
-
-    image:
-      "https://images.pexels.com/photos/3807521/pexels-photo-3807521.jpeg?auto=compress&cs=tinysrgb&w=400",
-
-    fullImage:
-      "https://images.pexels.com/photos/3807521/pexels-photo-3807521.jpeg?auto=compress&cs=tinysrgb&w=800"
+    name: "Women's Health Programmes at Different Educational & Work Places",
+    image: "./Womens Health Programme/thumbnail.jpg",
+    fullImages: [
+      "./Womens Health Programme/thumbnail.jpg",
+      "./Womens Health Programme/4F64EC78-B22F-4E26-B34C-2626D87B5F68.jpg",
+      "./Womens Health Programme/IMG_0749.jpg",
+      "./Womens Health Programme/IMG_1155.jpg",
+      "./Womens Health Programme/IMG_1591.jpg",
+      "./Womens Health Programme/IMG_6187.JPG",
+      "./Womens Health Programme/IMG_6203.jpg"
+    ]
   }
 ];
 
+// Active Lightbox State Tracker
+let currentWorkshopIndex = 0;
+let currentImageIndex = 0;
+
+const lightbox = document.getElementById('lightbox');
+const lightboxContent = lightbox.querySelector('.lightbox-content');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxCounter = document.getElementById('lightboxCounter');
+const closeBtn = lightbox.querySelector('.close');
+const prevBtn = document.getElementById('lightboxPrev');
+const nextBtn = document.getElementById('lightboxNext');
+
+// Update image and captions in the lightbox
+function updateLightboxImage() {
+  const workshop = workshops[currentWorkshopIndex];
+  const images = workshop.fullImages || [workshop.image];
+  const src = images[currentImageIndex];
+
+  // Apply a smooth transition
+  lightboxContent.style.opacity = '0';
+  
+  setTimeout(() => {
+    lightboxContent.src = src;
+    lightboxContent.alt = `${workshop.name} - Image ${currentImageIndex + 1}`;
+    lightboxCaption.textContent = workshop.name;
+    lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+
+    // Adjust visibility based on whether the folder has multiple images
+    if (images.length <= 1) {
+      lightbox.classList.add('single-image');
+    } else {
+      lightbox.classList.remove('single-image');
+    }
+    
+    lightboxContent.style.opacity = '1';
+  }, 150);
+}
+
+function showNextImage() {
+  const workshop = workshops[currentWorkshopIndex];
+  const images = workshop.fullImages || [workshop.image];
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  updateLightboxImage();
+}
+
+function showPrevImage() {
+  const workshop = workshops[currentWorkshopIndex];
+  const images = workshop.fullImages || [workshop.image];
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  updateLightboxImage();
+}
 
 // Populate gallery with workshop data
-
 function populateGallery() {
-
-  const galleryGrid =
-    document.querySelector('.gallery-grid');
-
+  const galleryGrid = document.querySelector('.gallery-grid');
   galleryGrid.innerHTML = '';
 
-  workshops.forEach(workshop => {
-
-    const galleryItem =
-      document.createElement('div');
-
+  workshops.forEach((workshop, index) => {
+    const galleryItem = document.createElement('div');
     galleryItem.className = 'gallery-item';
-
-    // Support both fullImage and fullImages
-    galleryItem.dataset.src =
-      workshop.fullImages
-        ? workshop.fullImages[0]
-        : workshop.fullImage;
-
-    galleryItem.dataset.name =
-      workshop.name;
+    galleryItem.dataset.index = index;
 
     galleryItem.innerHTML = `
-      <img src="${workshop.image}" alt="${workshop.name}">
-
+      <img src="${workshop.image}" alt="${workshop.name}" loading="lazy">
       <div class="overlay">
         <i class="fas fa-expand"></i>
       </div>
-
-      <div class="gallery-name">
+      <div class="folder-caption">
         ${workshop.name}
       </div>
     `;
 
     galleryGrid.appendChild(galleryItem);
-
   });
 
-  // Re-attach lightbox event listeners
-  const newGalleryItems =
-    document.querySelectorAll('.gallery-item');
-
+  // Re-attach lightbox event listeners to the dynamic cards
+  const newGalleryItems = document.querySelectorAll('.gallery-item');
   newGalleryItems.forEach(item => {
-
     item.addEventListener('click', () => {
-
-      const src = item.dataset.src;
-      const name = item.dataset.name;
-
-      lightboxContent.src = src;
-      lightboxContent.alt = name;
-
+      currentWorkshopIndex = parseInt(item.dataset.index, 10);
+      currentImageIndex = 0;
+      updateLightboxImage();
       lightbox.classList.add('active');
-
     });
-
   });
-
 }
 
-
 // Mobile menu
-
-const hamburger =
-  document.getElementById('hamburger');
-
-const navMenu =
-  document.getElementById('navMenu');
-
-const navLinks =
-  document.querySelectorAll('.nav-link');
-
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-link');
 
 hamburger.addEventListener('click', () => {
-
   navMenu.classList.toggle('active');
-
   hamburger.classList.toggle('active');
-
 });
-
 
 navLinks.forEach(link => {
-
   link.addEventListener('click', () => {
-
     navMenu.classList.remove('active');
-
     hamburger.classList.remove('active');
-
-    navLinks.forEach(l =>
-      l.classList.remove('active')
-    );
-
+    navLinks.forEach(l => l.classList.remove('active'));
     link.classList.add('active');
-
   });
-
 });
-
 
 // Sticky navbar
-
 window.addEventListener('scroll', () => {
-
-  const navbar =
-    document.getElementById('navbar');
-
+  const navbar = document.getElementById('navbar');
   if (window.scrollY > 50) {
-
-    navbar.style.boxShadow =
-      '0 4px 16px rgba(0,0,0,0.12)';
-
+    navbar.style.boxShadow = '0 4px 16px rgba(0,0,0,0.12)';
   } else {
-
-    navbar.style.boxShadow =
-      '0 2px 12px rgba(0,0,0,0.08)';
+    navbar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
   }
-
 });
-
-
-// Gallery lightbox
-
-const lightbox =
-  document.getElementById('lightbox');
-
-const lightboxContent =
-  lightbox.querySelector('.lightbox-content');
-
-const closeBtn =
-  lightbox.querySelector('.close');
-
 
 // Populate gallery on page load
-
 populateGallery();
 
-
 // Close lightbox
-
 closeBtn.addEventListener('click', () => {
-
   lightbox.classList.remove('active');
-
 });
 
-
 // Close when clicking outside image
-
 lightbox.addEventListener('click', (e) => {
-
-  if (e.target === lightbox) {
-
+  if (e.target === lightbox || e.target.classList.contains('lightbox-wrapper')) {
     lightbox.classList.remove('active');
-
   }
+});
 
+// Navigation button clicks
+prevBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  showPrevImage();
+});
+
+nextBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  showNextImage();
 });
 
 
@@ -370,16 +331,157 @@ contactForm.addEventListener('submit', (e) => {
 
 
 // Keyboard navigation for lightbox
-
 document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('active')) return;
 
-  if (
-    lightbox.classList.contains('active')
-    && e.key === 'Escape'
-  ) {
-
+  if (e.key === 'Escape') {
     lightbox.classList.remove('active');
+  } else if (e.key === 'ArrowRight') {
+    showNextImage();
+  } else if (e.key === 'ArrowLeft') {
+    showPrevImage();
+  }
+});
 
+
+// Testimonials Slider Logic
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('testimonialsTrack');
+  const prevBtn = document.getElementById('testimonialsPrev');
+  const nextBtn = document.getElementById('testimonialsNext');
+  const dotsContainer = document.getElementById('testimonialsDots');
+  
+  if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+
+  const testimonials = Array.from(track.children);
+  if (testimonials.length === 0) return;
+
+  let currentIndex = 0;
+  let autoplayInterval;
+  
+  // Calculate visible cards based on screen size
+  function getVisibleCardsCount() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 992) return 2;
+    return 3;
   }
 
+  function getMaxIndex() {
+    return Math.max(0, testimonials.length - getVisibleCardsCount());
+  }
+
+  // Setup/Render indicator dots
+  function setupDots() {
+    dotsContainer.innerHTML = '';
+    const visibleCount = getVisibleCardsCount();
+    const stepsCount = testimonials.length - visibleCount + 1;
+    
+    for (let i = 0; i < stepsCount; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === currentIndex) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateSlider();
+        resetAutoplay();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  // Update slider position & state
+  function updateSlider() {
+    const visibleCount = getVisibleCardsCount();
+    const maxIdx = getMaxIndex();
+    
+    // Ensure index bounds are safe
+    if (currentIndex > maxIdx) {
+      currentIndex = maxIdx;
+    }
+    
+    const card = testimonials[0];
+    const cardWidth = card.getBoundingClientRect().width;
+    const gap = 24; // gap between cards
+    const offset = currentIndex * (cardWidth + gap);
+    
+    track.style.transform = `translateX(-${offset}px)`;
+    
+    // Update dots active class
+    const dots = Array.from(dotsContainer.children);
+    dots.forEach((dot, idx) => {
+      if (idx === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    // Disable buttons at bounds
+    prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+    prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+    
+    nextBtn.style.opacity = currentIndex === maxIdx ? '0.5' : '1';
+    nextBtn.style.pointerEvents = currentIndex === maxIdx ? 'none' : 'auto';
+  }
+
+  // Event Listeners for Arrows
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+      resetAutoplay();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < getMaxIndex()) {
+      currentIndex++;
+      updateSlider();
+      resetAutoplay();
+    }
+  });
+
+  // Autoplay functionality
+  function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+      const maxIdx = getMaxIndex();
+      if (currentIndex < maxIdx) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // loop back
+      }
+      updateSlider();
+    }, 4500);
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  // Hover states to pause autoplay
+  const sliderContainer = document.querySelector('.testimonials-slider-container');
+  sliderContainer.addEventListener('mouseenter', stopAutoplay);
+  sliderContainer.addEventListener('mouseleave', startAutoplay);
+  dotsContainer.addEventListener('mouseenter', stopAutoplay);
+  dotsContainer.addEventListener('mouseleave', startAutoplay);
+
+  // Resize handler with debounce
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      setupDots();
+      updateSlider();
+    }, 150);
+  });
+
+  // Init
+  setupDots();
+  updateSlider();
+  startAutoplay();
 });
