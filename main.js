@@ -457,7 +457,8 @@ const dotsContainer = document.getElementById('testimonialsDots');
 if (track && googleReviews && googleReviews.length > 0) {
   track.innerHTML = '';
   googleReviews.forEach(review => {
-    const initials = review.author.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+    const authorName = (review.author || 'User').trim();
+    const initials = authorName.split(/\s+/).map(n => n[0]).join('').substring(0, 2).toUpperCase();
     const colors = ['#4CAF50', '#2E7D32', '#F4A261', '#E9C46A', '#81C784', '#F06292', '#2196F3', '#9C27B0'];
     const bgColor = colors[review.author.length % colors.length];
     
