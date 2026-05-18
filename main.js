@@ -345,166 +345,167 @@ document.addEventListener('keydown', (e) => {
 
 
 // Testimonials Slider Logic
-document.addEventListener('DOMContentLoaded', () => {
-  const track = document.getElementById('testimonialsTrack');
-  const prevBtn = document.getElementById('testimonialsPrev');
-  const nextBtn = document.getElementById('testimonialsNext');
-  const dotsContainer = document.getElementById('testimonialsDots');
-  
-  if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+const track = document.getElementById('testimonialsTrack');
+const prevBtnSlider = document.getElementById('testimonialsPrev');
+const nextBtnSlider = document.getElementById('testimonialsNext');
+const dotsContainer = document.getElementById('testimonialsDots');
 
+if (track && prevBtnSlider && nextBtnSlider && dotsContainer) {
   const testimonials = Array.from(track.children);
-  if (testimonials.length === 0) return;
-
-  let currentIndex = 0;
-  let autoplayInterval;
   
-  // Calculate visible cards based on screen size
-  function getVisibleCardsCount() {
-    if (window.innerWidth <= 600) return 1;
-    if (window.innerWidth <= 992) return 2;
-    return 3;
-  }
-
-  function getMaxIndex() {
-    return Math.max(0, testimonials.length - getVisibleCardsCount());
-  }
-
-  // Setup/Render indicator dots
-  function setupDots() {
-    dotsContainer.innerHTML = '';
-    const visibleCount = getVisibleCardsCount();
-    const stepsCount = testimonials.length - visibleCount + 1;
+  if (testimonials.length > 0) {
+    let currentIndex = 0;
+    let autoplayInterval;
     
-    for (let i = 0; i < stepsCount; i++) {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      if (i === currentIndex) dot.classList.add('active');
-      dot.addEventListener('click', () => {
-        currentIndex = i;
+    // Calculate visible cards based on screen size
+    function getVisibleCardsCount() {
+      if (window.innerWidth <= 600) return 1;
+      if (window.innerWidth <= 992) return 2;
+      return 3;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, testimonials.length - getVisibleCardsCount());
+    }
+
+    // Setup/Render indicator dots
+    function setupDots() {
+      dotsContainer.innerHTML = '';
+      const visibleCount = getVisibleCardsCount();
+      const stepsCount = testimonials.length - visibleCount + 1;
+      
+      for (let i = 0; i < stepsCount; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === currentIndex) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateSlider();
+          resetAutoplay();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    // Update slider position & state
+    function updateSlider() {
+      const visibleCount = getVisibleCardsCount();
+      const maxIdx = getMaxIndex();
+      
+      // Ensure index bounds are safe
+      if (currentIndex > maxIdx) {
+        currentIndex = maxIdx;
+      }
+      
+      const card = testimonials[0];
+      const cardWidth = card.getBoundingClientRect().width;
+      const gap = 24; // gap between cards
+      const offset = currentIndex * (cardWidth + gap);
+      
+      track.style.transform = `translateX(-${offset}px)`;
+      
+      // Update dots active class
+      const dots = Array.from(dotsContainer.children);
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+
+      // Disable buttons at bounds
+      prevBtnSlider.style.opacity = currentIndex === 0 ? '0.5' : '1';
+      prevBtnSlider.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+      
+      nextBtnSlider.style.opacity = currentIndex === maxIdx ? '0.5' : '1';
+      nextBtnSlider.style.pointerEvents = currentIndex === maxIdx ? 'none' : 'auto';
+    }
+
+    // Event Listeners for Arrows
+    prevBtnSlider.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
         updateSlider();
         resetAutoplay();
-      });
-      dotsContainer.appendChild(dot);
-    }
-  }
-
-  // Update slider position & state
-  function updateSlider() {
-    const visibleCount = getVisibleCardsCount();
-    const maxIdx = getMaxIndex();
-    
-    // Ensure index bounds are safe
-    if (currentIndex > maxIdx) {
-      currentIndex = maxIdx;
-    }
-    
-    const card = testimonials[0];
-    const cardWidth = card.getBoundingClientRect().width;
-    const gap = 24; // gap between cards
-    const offset = currentIndex * (cardWidth + gap);
-    
-    track.style.transform = `translateX(-${offset}px)`;
-    
-    // Update dots active class
-    const dots = Array.from(dotsContainer.children);
-    dots.forEach((dot, idx) => {
-      if (idx === currentIndex) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
       }
     });
 
-    // Disable buttons at bounds
-    prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-    prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
-    
-    nextBtn.style.opacity = currentIndex === maxIdx ? '0.5' : '1';
-    nextBtn.style.pointerEvents = currentIndex === maxIdx ? 'none' : 'auto';
-  }
-
-  // Event Listeners for Arrows
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlider();
-      resetAutoplay();
-    }
-  });
-
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex < getMaxIndex()) {
-      currentIndex++;
-      updateSlider();
-      resetAutoplay();
-    }
-  });
-
-  // Autoplay functionality
-  function startAutoplay() {
-    autoplayInterval = setInterval(() => {
-      const maxIdx = getMaxIndex();
-      if (currentIndex < maxIdx) {
+    nextBtnSlider.addEventListener('click', () => {
+      if (currentIndex < getMaxIndex()) {
         currentIndex++;
-      } else {
-        currentIndex = 0; // loop back
+        updateSlider();
+        resetAutoplay();
       }
-      updateSlider();
-    }, 4500);
-  }
+    });
 
-  function stopAutoplay() {
-    clearInterval(autoplayInterval);
-  }
+    // Autoplay functionality
+    function startAutoplay() {
+      autoplayInterval = setInterval(() => {
+        const maxIdx = getMaxIndex();
+        if (currentIndex < maxIdx) {
+          currentIndex++;
+        } else {
+          currentIndex = 0; // loop back
+        }
+        updateSlider();
+      }, 4500);
+    }
 
-  function resetAutoplay() {
-    stopAutoplay();
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+
+    function resetAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    // Hover states to pause autoplay
+    const sliderContainer = document.querySelector('.testimonials-slider-container');
+    if (sliderContainer) {
+      sliderContainer.addEventListener('mouseenter', stopAutoplay);
+      sliderContainer.addEventListener('mouseleave', startAutoplay);
+    }
+    if (dotsContainer) {
+      dotsContainer.addEventListener('mouseenter', stopAutoplay);
+      dotsContainer.addEventListener('mouseleave', startAutoplay);
+    }
+
+    // Resize handler with debounce
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        setupDots();
+        updateSlider();
+      }, 150);
+    });
+
+    // Init
+    setupDots();
+    updateSlider();
     startAutoplay();
   }
-
-  // Hover states to pause autoplay
-  const sliderContainer = document.querySelector('.testimonials-slider-container');
-  sliderContainer.addEventListener('mouseenter', stopAutoplay);
-  sliderContainer.addEventListener('mouseleave', startAutoplay);
-  dotsContainer.addEventListener('mouseenter', stopAutoplay);
-  dotsContainer.addEventListener('mouseleave', startAutoplay);
-
-  // Resize handler with debounce
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      setupDots();
-      updateSlider();
-    }, 150);
-  });
-
-  // Init
-  setupDots();
-  updateSlider();
-  startAutoplay();
-});
+}
 
 // Mobile Hamburger Menu Logic
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
+const mobileHamburger = document.getElementById('hamburger');
+const mobileNavMenu = document.getElementById('navMenu');
+const mobileNavLinks = document.querySelectorAll('.nav-link');
 
-  if (hamburger && navMenu) {
-    // Toggle menu open/close on click
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
+if (mobileHamburger && mobileNavMenu) {
+  // Toggle menu open/close on click
+  mobileHamburger.addEventListener('click', () => {
+    mobileHamburger.classList.toggle('active');
+    mobileNavMenu.classList.toggle('active');
+  });
 
-    // Close menu when any nav link is clicked
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
+  // Close menu when any nav link is clicked
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileHamburger.classList.remove('active');
+      mobileNavMenu.classList.remove('active');
     });
-  }
-});
+  });
+}

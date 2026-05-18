@@ -5,9 +5,9 @@
 }
 
 :root {
-  --green: #4CAF50;
-  --green-dark: #3E8E41;
-  --green-light: #C8E6C9;
+  --green: #22c55e;
+  --green-dark: #16a34a;
+  --green-light: #bbf7d0;
   --peach: #F4A261;
   --yellow: #E9C46A;
   --white: #FFFFFF;
@@ -734,6 +734,7 @@ section {
   display: flex;
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   gap: 24px;
+  align-items: flex-start;
 }
 
 .testimonials-track .testimonial {
@@ -811,6 +812,16 @@ section {
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.testimonial::-webkit-scrollbar {
+  width: 4px;
+}
+.testimonial::-webkit-scrollbar-thumb {
+  background: var(--green);
+  border-radius: 4px;
 }
 
 .testimonial:hover {
@@ -1280,11 +1291,14 @@ section {
 
   .hero-buttons {
     flex-direction: column;
+    align-items: center;
   }
 
   .btn {
     width: 100%;
     max-width: 280px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   section {
