@@ -288,7 +288,7 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener('click', () => {
+if (hamburger) hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
   hamburger.classList.toggle('active');
 });
@@ -316,24 +316,24 @@ window.addEventListener('scroll', () => {
 populateGallery();
 
 // Close lightbox
-closeBtn.addEventListener('click', () => {
+if (closeBtn) closeBtn.addEventListener('click', () => {
   lightbox.classList.remove('active');
 });
 
 // Close when clicking outside image
-lightbox.addEventListener('click', (e) => {
+if (lightbox) lightbox.addEventListener('click', (e) => {
   if (e.target === lightbox || e.target.classList.contains('lightbox-wrapper')) {
     lightbox.classList.remove('active');
   }
 });
 
 // Navigation button clicks
-prevBtn.addEventListener('click', (e) => {
+if (prevBtn) prevBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   showPrevImage();
 });
 
-nextBtn.addEventListener('click', (e) => {
+if (nextBtn) nextBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   showNextImage();
 });
@@ -346,21 +346,17 @@ const scrollTop =
 
 
 window.addEventListener('scroll', () => {
-
-  if (window.scrollY > 300) {
-
-    scrollTop.classList.add('show');
-
-  } else {
-
-    scrollTop.classList.remove('show');
-
+  if (scrollTop) {
+    if (window.scrollY > 300) {
+      scrollTop.classList.add('show');
+    } else {
+      scrollTop.classList.remove('show');
+    }
   }
-
 });
 
 
-scrollTop.addEventListener('click', () => {
+if (scrollTop) scrollTop.addEventListener('click', () => {
 
   window.scrollTo({
     top: 0,
@@ -379,7 +375,7 @@ const formNote =
   document.getElementById('formNote');
 
 
-contactForm.addEventListener('submit', (e) => {
+if (contactForm) contactForm.addEventListener('submit', (e) => {
 
   e.preventDefault();
 
@@ -482,7 +478,9 @@ if (track && googleReviews && googleReviews.length > 0) {
     div.className = 'testimonial';
     div.innerHTML = `
       <div class="review-content">
-        <div class="stars">★★★★★</div>
+        <div class="stars" style="color: #ffc107; display: flex; gap: 4px; margin-bottom: 8px;">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
         ${textHTML}
         ${btnHTML}
       </div>

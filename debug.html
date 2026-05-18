@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Debugging script.js</h1>
+  <div id="error-output" style="color: red; font-family: monospace; white-space: pre; font-size: 20px;"></div>
+  
+  <div id="testimonialsTrack"></div>
+  <div id="testimonialsPrev"></div>
+  <div id="testimonialsNext"></div>
+  <div id="testimonialsDots"></div>
+  <div class="gallery-grid"></div>
+  <div id="lightbox" class=""><img class="lightbox-content" /><div id="lightboxCaption"></div><div id="lightboxCounter"></div><div class="close"></div><div id="lightboxPrev"></div><div id="lightboxNext"></div></div>
+  <div id="hamburger"></div>
+  <div id="navMenu"></div>
+  
+  <script>
+    window.onerror = function(msg, url, line, col, error) {
+      document.getElementById('error-output').innerText += "Error: " + msg + "\nLine: " + line + "\nCol: " + col + "\n\n";
+    };
+  </script>
+  <script src="script.js"></script>
+  <script>
+    if (document.getElementById('error-output').innerText === "") {
+        document.getElementById('error-output').innerText = "NO ERRORS FOUND!";
+        document.getElementById('error-output').style.color = "green";
+    }
+  </script>
+</body>
+</html>
