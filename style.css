@@ -812,21 +812,34 @@ section {
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s;
-  max-height: 480px;
-  overflow-y: auto;
-}
-
-.testimonial::-webkit-scrollbar {
-  width: 4px;
-}
-.testimonial::-webkit-scrollbar-thumb {
-  background: var(--green);
-  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
+}
+
+.review-content {
+  flex-grow: 1;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--green);
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 16px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.read-more-btn:hover {
+  color: var(--green-dark);
 }
 
 .stars {
