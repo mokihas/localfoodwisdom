@@ -488,7 +488,9 @@ if (track && googleReviews && googleReviews.length > 0) {
         <div class="client-avatar" style="background-color: ${bgColor}; color: white; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">${initials}</div>
         <div>
           <strong>${review.author}</strong>
-          <span>Verified Google Review</span>
+          <span style="display: flex; align-items: center; gap: 4px; color: #4285F4; font-size: 0.8rem; font-weight: 600; margin-top: 2px;">
+            <i class="fab fa-google"></i> Verified Google Review
+          </span>
         </div>
       </div>
     `;
