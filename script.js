@@ -387,17 +387,17 @@ if (track && prevBtnSlider && nextBtnSlider && dotsContainer) {
       return 3;
     }
 
-    function getMaxIndex() {
-      return Math.max(0, testimonials.length - getVisibleCardsCount());
+    // Calculate total pages dynamically
+    function getPageCount() {
+      return Math.ceil(testimonials.length / getVisibleCardsCount());
     }
 
-    // Setup/Render indicator dots
+    // Setup/Render indicator dots matching total pages
     function setupDots() {
       dotsContainer.innerHTML = '';
-      const visibleCount = getVisibleCardsCount();
-      const stepsCount = testimonials.length - visibleCount + 1;
+      const pageCount = getPageCount();
       
-      for (let i = 0; i < stepsCount; i++) {
+      for (let i = 0; i < pageCount; i++) {
         const dot = document.createElement('div');
         dot.classList.add('dot');
         if (i === currentIndex) dot.classList.add('active');
@@ -410,20 +410,23 @@ if (track && prevBtnSlider && nextBtnSlider && dotsContainer) {
       }
     }
 
-    // Update slider position & state
+    // Update slider position & state (page-by-page translation)
     function updateSlider() {
       const visibleCount = getVisibleCardsCount();
-      const maxIdx = getMaxIndex();
+      const pageCount = getPageCount();
       
-      // Ensure index bounds are safe
-      if (currentIndex > maxIdx) {
-        currentIndex = maxIdx;
+      // Keep page index within bounds
+      if (currentIndex >= pageCount) {
+        currentIndex = Math.max(0, pageCount - 1);
       }
+      
+      // Calculate aligned card index (cap to prevent overflow empty space at the end)
+      const cardIndex = Math.min(currentIndex * visibleCount, testimonials.length - visibleCount);
       
       const card = testimonials[0];
       const cardWidth = card.getBoundingClientRect().width;
       const gap = 24; // gap between cards
-      const offset = currentIndex * (cardWidth + gap);
+      const offset = cardIndex * (cardWidth + gap);
       
       track.style.transform = `translateX(-${offset}px)`;
       
@@ -441,11 +444,11 @@ if (track && prevBtnSlider && nextBtnSlider && dotsContainer) {
       prevBtnSlider.style.opacity = currentIndex === 0 ? '0.5' : '1';
       prevBtnSlider.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
       
-      nextBtnSlider.style.opacity = currentIndex === maxIdx ? '0.5' : '1';
-      nextBtnSlider.style.pointerEvents = currentIndex === maxIdx ? 'none' : 'auto';
+      nextBtnSlider.style.opacity = currentIndex === pageCount - 1 ? '0.5' : '1';
+      nextBtnSlider.style.pointerEvents = currentIndex === pageCount - 1 ? 'none' : 'auto';
     }
 
-    // Event Listeners for Arrows
+    // Event Listeners for Arrows (page transition)
     prevBtnSlider.addEventListener('click', () => {
       if (currentIndex > 0) {
         currentIndex--;
@@ -455,21 +458,22 @@ if (track && prevBtnSlider && nextBtnSlider && dotsContainer) {
     });
 
     nextBtnSlider.addEventListener('click', () => {
-      if (currentIndex < getMaxIndex()) {
+      const pageCount = getPageCount();
+      if (currentIndex < pageCount - 1) {
         currentIndex++;
         updateSlider();
         resetAutoplay();
       }
     });
 
-    // Autoplay functionality
+    // Autoplay functionality page-by-page
     function startAutoplay() {
       autoplayInterval = setInterval(() => {
-        const maxIdx = getMaxIndex();
-        if (currentIndex < maxIdx) {
+        const pageCount = getPageCount();
+        if (currentIndex < pageCount - 1) {
           currentIndex++;
         } else {
-          currentIndex = 0; // loop back
+          currentIndex = 0; // loop back to first page
         }
         updateSlider();
       }, 4500);
